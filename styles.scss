@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$mobile: 375px;
+$desktop: 1200px;
+
+$pale-blue: hsl(225, 100%, 94%);
+$bright-blue: hsl(245, 75%, 52%);
+
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+
+
+$fz-sm: 14px;
+$fz-p: 16px;
+$fz-h: 24px;
+
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    place-items: center;
+    font-family: 'Red Hat Display';
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: $very-pale-blue;
+}
+
+.summary-card {
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;    
+    max-width: $mobile;
+    border-radius: 1em;
+    overflow: hidden;
+
+    &__cover {
+        
+    }
+    &__info {
+        padding: 2em;
+    }
+    &__title {
+        font-weight: 700;
+        margin: 0;
+        font-size: $fz-h;
+    }
+    &__subtitle {
+        font-size: $fz-p;
+        color: $desaturated-blue;
+    }
+    &__subscription {
+        background-color: $very-pale-blue;
+        border-radius: .5em;
+        display: flex;
+        align-items: center;
+        padding: 1em;
+        margin-bottom: 1.5em;
+        
+        img {
+            margin-right: 1em;
+        }
+    }
+}
+
+.subscription__info {
+    text-align: left;
+    color: $desaturated-blue;
+    font-size: $fz-sm;
+    span {
+        font-weight: bold;
+        color: $dark-blue;
+        width: 100%;
+    }
+
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: .7em;
+    padding: 1em;
+    font-weight: bold;
+    display: block;
+    background-color: inherit;
+    border: none;
+
+    &:hover {
+        transition: .2s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+    
+    &-underline {
+        color: $bright-blue;
+        text-decoration: underline;
+        font-weight: 500;
+        
+        &:hover {
+            color: darken($bright-blue, 10%);
+        }
+    }
+    &-action {
+        width: 100%;
+        background-color: $bright-blue;
+        color: white;
+        margin-bottom: 1em;
+        box-shadow: 0px 5px 15px $desaturated-blue;
+
+        &:hover {
+            background-color: darken($bright-blue, 10%);
+        }
+    }
+    &-ghost {
+        width: 100%;
+        color: $desaturated-blue;
+        &:hover {
+            color: darken($desaturated-blue, 10%);
+        }
+    }
+}
